@@ -1,4 +1,7 @@
-0. Where am I?
+ Where am I?
+
+the second project and these are its questions
+
 mandatory
 Write a script that prints the absolute path name of the current working directory.
 
