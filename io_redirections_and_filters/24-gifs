@@ -1,0 +1,9 @@
+#!/bin/bash
+find . -type f -iname '*.gif' -print0 | \
+  xargs -0 -I{} bash -c '
+    f="{}"
+    # Get filename without path and without extension (case-insensitive)
+    base="${f##*/}"
+    base="${base%.*}"
+    echo "$base"
+  ' | sort -f

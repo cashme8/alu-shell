@@ -1,0 +1,4 @@
+#!/bin/bash
+# Skip header, extract host column, count, sort by count desc, print top 11 hosts
+
+tail -n +2 | awk '{print $1}' | sort | uniq -c | sort -rn | head -11 | awk '{print $2}'

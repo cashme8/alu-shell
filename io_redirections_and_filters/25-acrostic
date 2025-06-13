@@ -1,0 +1,6 @@
+#!/bin/bash
+while IFS= read -r line; do
+  # Print first character of the line without newline (-n)
+  printf "%s" "${line:0:1}"
+done
+echo
