@@ -1,3 +1,2 @@
 #!/bin/bash
-WATER_DEC=0 STIR_DEC=0 for c in $(echo ${WATER:0} | grep -o .); do WATER_DEC=$((WATER_DEC * 5 + $(expr index water $c) - 1)); done for c in $(echo ${STIR:0} | grep -o .); do STIR_DEC=$((STIR_DEC * 4 + $(expr index stir $c) - 1)); done SUM=$((WATER_DEC + STIR_DEC)) BASE=bestchol OUT="" while [ "$SUM" -gt 0 ]; do CHAR=${BASE:$(($SUM % 8)):1} OUT="$CHAR$OUT" SUM=$(($SUM / 8)); done echo ${OUT:-b}
-
+echo $(printf %o $(($((5#$(echo $WATER | tr 'water' '01234'))) + $((5#$(echo $STIR | tr 'stir.' '01234'))))) | tr '01234567' 'bestcholhc')
