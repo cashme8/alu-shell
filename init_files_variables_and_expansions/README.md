@@ -1,7 +1,12 @@
 # Shell, init files, variables and expansions
 I did this assignment after long hours of study.
 
-man or help:
+## Tasks
+
+- `0-alias`: Creates an alias `ls` that removes all files in the current directory.
+- `1-hello_you`: Prints `hello` followed by the current username.
+- `2-path`: Adds `/action` to the end of the PATH variable.
+
 
 printenv
 set
