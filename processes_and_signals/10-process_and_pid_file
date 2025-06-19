@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Save current process ID to a PID file
+echo $$ > /var/run/myscript.pid
+
+# Set signal traps directly with inline commands
+trap 'echo "I hate the kill command"; rm -f /var/run/myscript.pid; exit 0' SIGTERM
+trap 'echo "Y U no love me?!";' SIGINT
+trap 'rm -f /var/run/myscript.pid; exit 0' SIGQUIT
+
+# Loop forever
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done
